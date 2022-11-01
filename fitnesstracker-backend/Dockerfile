@@ -1,4 +1,6 @@
-FROM openjdk:17-alpine
-ADD target/fitness-app-docker.jar fitness-app-docker.jar
-ENTRYPOINT ["java", "-jar", "fitness-app-docker.jar"]
+FROM maven
+WORKDIR /fitnesstracker-backend
+COPY . .
+RUN mvn clean install -DskipTests
+CMD mvn spring-boot:run
 EXPOSE 8080

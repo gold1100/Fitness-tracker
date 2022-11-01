@@ -4,7 +4,7 @@ services:
 
   Frontend:
     image: 'fitness-app-frontend'
-    build: /fitnesstracker-frontend
+    build: ./fitnesstracker-frontend
     ports: 
       - "3000:3000"
     depends_on:
@@ -12,7 +12,7 @@ services:
 
   API:
     image: 'fitness-app-backend'
-    build: /fitnesstracker-backend
+    build: ./fitnesstracker-backend
     ports:
       - "8080:8080"
     depends_on:
@@ -27,7 +27,7 @@ services:
 
   PostgreSQL:
     image: mock-db
-    build: /db
+    build: ./db
     ports:
       - "5432:5432"
     environment:
